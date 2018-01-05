@@ -225,6 +225,7 @@ $( "#like" ).focusin(function() {
 
 $("#addCOment").click(function(){
   var textarea2 = $("#textarea2").val();
+
   $("#comentBox").append(
 
 
@@ -239,8 +240,21 @@ $("#addCOment").click(function(){
     
     );
 
-  $("#textarea2").text(" ");
+  $("#textarea2").val(" ");
 
+
+});
+
+// funcion textarea
+  $('#btn').click(function(){
+  var comment = $('#comment').val();
+  if (comment !== '') {
+  $('#comment').val("");
+  var cont = $('#comment-cont');
+  cont.append('<div class="chip comment-bubble"><img src="assets/images/images.jpg"alt="Contact Person">' + comment + '</div>')
+  } else {
+    $('#btn').attr('disable', 'disable');
+  }
 });
 
 
@@ -267,7 +281,7 @@ $("#newPostText").click(function(){
     '</div>' 
     );
 
-  $("#textarea").text(" ");
+  $("#textarea").val(" ");
 
 });
 
